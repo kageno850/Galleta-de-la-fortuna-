@@ -1,0 +1,37 @@
+
+import './App.css'
+import arryPhrases from './utils/phrases.json'
+import getRandom from './services/getRandom'
+import { useState } from 'react'
+import ShowPhrase from './componets/ShowPhrase'
+import ButtomPhrase from './componets/ButtomPhrase'
+import arryImagenes from './utils/images.json' 
+
+function App() {
+  
+const [phrase, setPhrase] = useState(getRandom(arryPhrases))
+
+const [image, setImage] = useState(getRandom(arryImagenes))
+
+const objStyles = {
+  backgroundImage: `url(../fortuna-2/fondo${image}.png)`
+}
+  return (
+    <div className='app' style={objStyles}>
+      <h1 className='app__title'>Galleta de la Fortuna</h1>
+      <ButtomPhrase
+      setPhrase={setPhrase}
+      setImage={setImage}
+      />
+      <ShowPhrase
+      phrase={phrase}
+      />
+      
+    </div>
+
+  )
+
+    
+}
+
+export default App
