@@ -1,7 +1,7 @@
 import React from 'react'
 import arryPhrases from '../utils/phrases.json'
 import getRandom from '../services/getRandom'
-import arryImagenes from '..images.json' 
+import arryImagenes from '../utils/images.json' 
 
 const ButtomPhrase = ({setPhrase, setImage}) => {
 
